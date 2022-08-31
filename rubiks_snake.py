@@ -2,7 +2,11 @@ import re
 import numpy as np
 
 from itertools import product, combinations
-from scipy.spatial.distance import cosine
+
+
+def cosine(u, v):
+    '''Pure NumPy analog of scipy.spatial.distance.cosine'''
+    return 1 - np.dot(u, v) / (np.linalg.norm(u) * np.linalg.norm(v))
 
 
 class RubiksSnake:
